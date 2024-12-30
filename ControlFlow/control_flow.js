@@ -54,3 +54,26 @@ console.log("User Category:", userCategory);
 let isAuthenticated = true;
 let authenticationStatus = isAuthenticated ? "Authenticated" : "Not authenticated";
 console.log("Authentication Status:", authenticationStatus);
+
+// ----- Dietary service
+let roleInOrg = "Employee";
+let authorizationStatus;
+
+switch (roleInOrg) {
+    case "Employee":
+        authorizationStatus = "Dietary Services";
+        break;
+    case "Enrolled Member":
+        authorizationStatus = "'Dietary Services' and one-on-one interaction with a dietician";
+        break;
+    case "Subscriber":
+        authorizationStatus = "Partial access to facilitate 'Dietary Services'";
+        break;
+    case "Non-Subscriber":
+        authorizationStatus = "Subscribe first to avail this facility";
+        break;
+    default:
+        authorizationStatus = "Unknown";
+}
+
+console.log("The user is authorized to:", authorizationStatus);
