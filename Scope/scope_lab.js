@@ -25,8 +25,31 @@ function show() {
     let functionLet = "I'm a block-scoped let";
     const functionConst = "I'm a block-scoped const";
 }
-show();
     
-console.log(functionVar); // Throws ReferenceError
-console.log(functionLet); // Throws ReferenceError
-console.log(functionConst); // Throws ReferenceError
+// console.log(functionVar); // Throws ReferenceError
+// console.log(functionLet); // Throws ReferenceError
+// console.log(functionConst); // Throws ReferenceError
+
+{
+    var varToReassign = "Var to reassign"
+    let letToReassign = "Let to reassign"
+    const constToReassign = "Const to reassign"
+
+    console.log(varToReassign);
+    console.log(letToReassign);
+    console.log(constToReassign);
+
+    varToReassign = "Reassigned var value"
+    letToReassign = "Reassigned let value"
+    // constToReassign = "Reassigned const value" // throws TypeError: Assignment to constant variable
+
+    console.log(varToReassign);
+    console.log(letToReassign);
+    console.log(constToReassign);
+}
+
+varToReassign = "Reassigned var value outside the block"
+letToReassign = "Reassigned let value outside the block"
+
+console.log(varToReassign);
+console.log(letToReassign);
